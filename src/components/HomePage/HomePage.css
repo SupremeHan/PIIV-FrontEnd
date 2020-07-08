@@ -1,0 +1,20 @@
+.movie-img img{
+    width: 150px;
+}
+
+.movie-info {
+    margin-left:20px;
+}
+
+.movie-info Link {
+    color: white;
+}
+
+.movie {
+    margin: 25px 0px;
+    padding-left: 20px;
+}
+
+select {
+    width: 200px;
+}

@@ -1,12 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import HomePage from './components/HomePage/HomePage';
+import AdminLoginPage from './components/AdminLoginPage/AdminLoginPage';
+import AdminDashboardPhoto from './components/AdminDashboardPhoto/AdminDashboardPhoto';
+import AdminDashboard from './components/AdminDashboard/AdminDashboard';
+import BookingPage from './components/BookingPage/BookingPage';
+
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'jquery/dist/jquery';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import 'popper.js/dist/popper';
+import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
+import { HashRouter, Route } from 'react-router-dom';
+import DescriptionPage from './components/DescriptionPage/DescriptionPage';
+import SeatPicker from './components/SeatPicker/SeatPicker';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/booking" component={BookingPage} />
+      <Route path="/api/movie/:mId" component={DescriptionPage} />
+      <Route path="/auth/login" component={ AdminLoginPage } />
+      <Route exact path="/admin/dashboard" component={AdminDashboard} />
+      <Route path="/admin/dashboard/photos/" component={AdminDashboardPhoto} />
+
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
