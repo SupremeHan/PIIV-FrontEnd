@@ -1,4 +1,4 @@
 export default interface PhotoType {
-    photoId: number;
+    movieId: number;
     imagePath: string;
 }

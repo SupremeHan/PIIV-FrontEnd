@@ -1,0 +1,66 @@
+.leftPage hr {
+    width: 95%;
+    border: 5px solid #3162Ac;
+}
+
+.leftPage {
+    margin-top: 30px;
+}
+
+.header hr {
+    border: 2px solid black;
+}
+
+.projekcija {
+    margin-top: 30px;
+}
+
+.showTime {
+    border: 1px solid black;
+    margin: 0px 10px;
+    border-radius: 7%;
+}
+
+.showTime:hover {
+    background-color: #3162Ac;
+    color: white;
+}
+
+.sRoom {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+  
+.bookButton {
+    width: 100%;
+    margin-top: 40px;
+}
+
+Form {
+    width: 80%;
+}
+
+@media (max-width:600px) {
+    .projekcija h2 {
+        font-size: 1.7rem;
+        margin-top: 20px;
+    }
+
+    .showTime {
+        margin-bottom: 10px;
+    }
+
+    Form {
+        width: 100%;
+    }
+
+
+    .bookButton {
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+
+    .sRoom {
+        margin-bottom: 10px;
+    }
+}

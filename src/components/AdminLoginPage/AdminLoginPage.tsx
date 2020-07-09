@@ -101,7 +101,7 @@ export default class UserLoginPage extends React.Component {
                     <Card>
                         <Card.Body>
                             <Card.Title>
-                                 User Login
+                                 Admin Login
                             </Card.Title>
 
                             <Form>

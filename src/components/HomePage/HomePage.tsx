@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Card, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 import MovieType from '../../types/MovieType';
 import api, { ApiResponse } from '../../api/api';
 import './HomePage.css';
@@ -9,18 +9,30 @@ import { ApiConfig } from '../../config/api.config';
 
 interface HomePageState {
     movies: MovieType[];
+    value: number;
+    
 }
 
 
-class HomePage extends React.Component {
+interface SingleMovieProperties {
+  movie: MovieType,
+}
+
+
+class HomePage extends React.Component<SingleMovieProperties> {
   state: HomePageState;
 
-  constructor(props: Readonly<{}>) {
+
+  constructor(props: Readonly<SingleMovieProperties>) {
     super(props);
 
     this.state = {
       movies: [],
+      value: 0,
+      
     }
+
+    
   }
   private getMovies() {
     api('api/movie', 'get', {})
@@ -40,7 +52,6 @@ private putMoviesInState(data: ApiMovieDto[]) {
         description: movie.description,
         imageUrl: movie.imageUrl,
       };
-      console.log(a)
       return a;
     });
       const newState = Object.assign(this.state, {
@@ -55,21 +66,17 @@ private putMoviesInState(data: ApiMovieDto[]) {
     this.getMovies();
   }
 
-  
   render() {
     return (
       <Container>
-        <div className="header">
-          <h1>Repertoar bioskopa</h1>
-          <hr/>
-          <select>
-            <option value="0">Izaberite zanr</option>
-            <option value="1">Action</option>
-            <option value="2">Horro</option>
-            <option value="3">Comedy</option>
-          </select>
+        <div className="navbar">
+          <img src={process.env.PUBLIC_URL + '/assets/logo.png'} className="mx-auto logo" />
+          <Link to='/auth/login'> <img src={process.env.PUBLIC_URL + '/assets/login.png'} className="float-right login"/> </Link>
+         
         </div>
-
+        <hr/>
+        <h1 className="text-left naslov">Repertoar bioskopa</h1>
+         
             <Row>
               {this.state.movies.map(this.singleMovie)}
             </Row>
@@ -82,18 +89,29 @@ private putMoviesInState(data: ApiMovieDto[]) {
       <Col md="6">
         <Row className="movie">
               <div className="movie-img">
-                <img src={ApiConfig.PHOTO_PATH + movie.imageUrl} alt="slika"/>
+                <img src={ApiConfig.PHOTO_PATH + movie.imageUrl } alt="slika"/>
               </div>
               <div className="movie-info">
                 <h2>
                   { movie.title }
                 </h2>
-                <p>Cao</p>
                 <p>{ movie.director }</p>
                 <p>{ movie.genre }</p>
-                <p>{ movie.duration } min</p>
-                <div>
-                  <Link to={`/api/movie/${ movie.movieId }`}>Detaljnije</Link>
+                <p className="nesto">{ movie.duration } min</p>
+                <div className="rate">
+                  <input type="radio" id="star5" name="rate" value="5" />
+                  <label htmlFor="star5" title="text">5 stars</label>
+                  <input type="radio" id="star4" name="rate" value="4" />
+                  <label htmlFor="star4" title="text">4 stars</label>
+                  <input type="radio" id="star3" name="rate" value="3" />
+                  <label htmlFor="star3" title="text">3 stars</label>
+                  <input type="radio" id="star2" name="rate" value="2" />
+                  <label htmlFor="star2" title="text">2 stars</label>
+                  <input type="radio" id="star1" name="rate" value="1" />
+                  <label htmlFor="star1" title="text">1 star</label>
+                </div>
+                <div className="more">
+                  <Link to={`/api/movie/${ movie.movieId }`}><p className="budjav">Vise Informacija</p></Link>
                 </div>
               </div>
              

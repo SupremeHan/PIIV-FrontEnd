@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import HomePage from './components/HomePage/HomePage';
 import AdminLoginPage from './components/AdminLoginPage/AdminLoginPage';
-import AdminDashboardPhoto from './components/AdminDashboardPhoto/AdminDashboardPhoto';
 import AdminDashboard from './components/AdminDashboard/AdminDashboard';
 import BookingPage from './components/BookingPage/BookingPage';
 
@@ -26,7 +25,6 @@ ReactDOM.render(
       <Route path="/api/movie/:mId" component={DescriptionPage} />
       <Route path="/auth/login" component={ AdminLoginPage } />
       <Route exact path="/admin/dashboard" component={AdminDashboard} />
-      <Route path="/admin/dashboard/photos/" component={AdminDashboardPhoto} />
 
     </HashRouter>
   </React.StrictMode>,

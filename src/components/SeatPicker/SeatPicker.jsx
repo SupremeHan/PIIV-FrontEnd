@@ -1,6 +1,5 @@
 import React from 'react';
 import './SeatPicker.css';
-import { Row } from 'react-bootstrap';
 
 class SeatPicker extends React.Component {
 
@@ -42,7 +41,7 @@ class SeatPicker extends React.Component {
       render() {
         return (
           <div>
-            <h1>Rezervacija</h1>
+           
             <DrawGrid 
               seat = { this.state.seat }
               available = { this.state.seatAvailable }
@@ -57,7 +56,7 @@ class SeatPicker extends React.Component {
     class DrawGrid extends React.Component {
       render() {
         return (
-           <div className="container">
+           <div className="container seatpick">
             <h2></h2>
             <table className="grid">
               <tbody>
@@ -86,7 +85,7 @@ class SeatPicker extends React.Component {
         const seatCount = this.props.available.length;
         return(
           <div className="left">
-            <h4>Available Seats: ({seatCount == 0? 'No seats available' : seatCount})</h4>
+            <h4>Slobodna mesta: ({seatCount == 0? 'No seats available' : seatCount})</h4>
             <div className="row seat">
               {this.props.available.map( res => <p key={res} >{res}</p> )}
             </div>
@@ -99,8 +98,8 @@ class SeatPicker extends React.Component {
       render() {
         return(
           <div className="right">
-            <h4>Reserved Seats: ({this.props.reserved.length})</h4>
-            <div className="row seat">
+            <h4>Rezervisana mesta: ({this.props.reserved.length})</h4>
+            <div className="row seat1">
               { this.props.reserved.map(res => <p key={res} >{res}</p>) }
             </div>
           </div>

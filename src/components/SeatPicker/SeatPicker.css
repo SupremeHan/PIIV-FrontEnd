@@ -5,7 +5,6 @@ h1 {
 
 .container {
   width: 600px;
-  margin: auto;
 }
 
 .grid td {
@@ -16,35 +15,67 @@ h1 {
   float: left;
   margin: 5px;
   color: white;
-  background-color: #3162AC;
+  background-color: #c4C4C4;
   border-radius: 10%;
 }
 
 .grid td:hover {
-  opacity: .7;
+  opacity: .8;
   cursor: pointer;
 }
 
 .reserved {
-  background-color: gray !important;
+  background-color: #3162Ac !important;
   color: #fff;
   display: inline-block;
 }
 
 .reserved::after {
-  content: 'RESERVED'
+  content: 'ZAUZETO';
+  
 }
 
 .available::after {
-  content: 'AVAILABLE';
+  content: 'SLOBODNO';
+  font-size: 0.8rem;
   
 }
 
 .available {
-  color: #333;
+  color: #c4C4C4;
 }
 
 .seat p{
     padding: 0 20px;
-    margin: 5px 0px;
+    margin: 5px 5px;
+    background-color: #c4C4C4;
+    color: white;
+    border-radius: 10%;
 }
+
+.seat1 p {
+  padding: 0 20px;
+  margin: 5px 5px;
+  background-color:#3162Ac;
+  color: white;
+  border-radius: 10%;
+}
+
+.left{
+  width: 90%;
+  margin-left: 10px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.right {
+  width: 90%;
+  margin-left: 10px;
+}
+
+.seatpick {
+  margin-top: 50px;
+  margin-left: 15px !important;
+  margin-right: 0;
+}
+

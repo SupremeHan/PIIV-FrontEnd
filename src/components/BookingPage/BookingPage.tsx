@@ -95,41 +95,48 @@ class BookingPage extends React.Component {
     render() {
         return(
             <Container>
+                <div className="header">
+                    <h1>Rezervacija</h1>
+                    <hr/>
+                </div>
+                
                 <Row>
-                    <Col md="6" sm="12">
+                    <Col md="6" sm="12" className="leftPage">
+                        <hr/>
                         <SeatPicker></SeatPicker>
                     </Col>
-                    <Col md="6" sm="12">
-                        <div className="row">
+                    <Col md="6" sm="12" className="projekcija">
+                        <h2>Izaberite vreme projekcije</h2>
+                        <div className="row sRoom">
                             {this.state.showTime.map(this.singleShowtime)}
                         </div>
                                
                         <Form>
                             <Form.Group>
-                                <Form.Label>First Name</Form.Label>
-                                <Form.Control placeholder="Enter name" 
+                                <Form.Label>Ime:</Form.Label>
+                                <Form.Control placeholder="Unesite vase ime"
                                 id="forname" type="text" value={this.state.addTicket.forename}
                                 onChange={ (e) => this.setAddModalStringFieldState('forename', e.target.value) }/>
                                 <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
+                                Nikada necemo podeliti vase unete informacije.
                                 </Form.Text>
                             </Form.Group>
 
                             <Form.Group>
-                                <Form.Label>Last Name</Form.Label>
-                                <Form.Control placeholder="Surname"
+                                <Form.Label>Prezime:</Form.Label>
+                                <Form.Control placeholder="Unesite vase prezime"
                                 id="surname" type="text" value={this.state.addTicket.surname}
                                 onChange={ (e) => this.setAddModalStringFieldState('surname', e.target.value) } />
                             </Form.Group>
                             <Form.Group>
-                                <Form.Label>Phone number</Form.Label>
-                                <Form.Control id="phone" type="text" value={this.state.addTicket.phone}
+                                <Form.Label>Broj telefona:</Form.Label>
+                                <Form.Control placeholder="Unesite broj telefona" id="phone" type="text" value={this.state.addTicket.phone}
                                 onChange={ (e) => this.setAddModalStringFieldState('phone', e.target.value) } />
                             </Form.Group>
 
 
-                            <Button variant="primary" type="submit" onClick={ () => this.doAddTicket()}>
-                                Submit
+                            <Button className="bookButton" variant="outline-primary" type="submit" onClick={ () => this.doAddTicket()}>
+                                Rezervisi
                             </Button>
                         </Form>
                     </Col>

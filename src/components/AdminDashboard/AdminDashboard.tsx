@@ -30,6 +30,8 @@ interface AdministratorDashboardState {
         description: string;
         message: string;
     };
+
+    
 }
 
 export default class AdminDashboard extends React.Component {
@@ -167,7 +169,7 @@ export default class AdminDashboard extends React.Component {
                 <Card>
                     <Card.Body>
                         <Card.Title>
-                            Titl
+                            Admin dashboard
                         </Card.Title>
 
                         <Table hover size="sm" bordered>
@@ -187,6 +189,7 @@ export default class AdminDashboard extends React.Component {
                                     <th>Duration</th>
                                     <th>Director</th>
                                     <th>Description</th>
+                                   
                                     <th></th>
                                 </tr>
                             </thead>
@@ -199,6 +202,7 @@ export default class AdminDashboard extends React.Component {
                                         <td>{movie.duration}</td>
                                         <td>{movie.director}</td>
                                         <td>{movie.description}</td>
+                                        
                                         <td className="text-center">
                                             <Button variant="primary" size="sm"
                                             onClick={ () => this.showEditModal(movie) } >Edit
@@ -367,6 +371,8 @@ export default class AdminDashboard extends React.Component {
             this.setEditModalVisibleState(false);
         })
     }
+
+    
 }
 
 
